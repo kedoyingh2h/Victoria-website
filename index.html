@@ -2,9 +2,140 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Hello World</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Victoria Dong</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Hello, World!</h1>
+
+  <!-- Password gate -->
+  <div id="gate">
+    <div class="gate-card">
+      <div class="brand">Victoria Dong</div>
+      <p>This little corner of the internet is just for family &amp; friends. Enter the password to come in.</p>
+      <input type="password" id="gate-input" placeholder="Password" autocomplete="off">
+      <button id="gate-submit">Enter</button>
+      <div class="gate-error" id="gate-error"></div>
+    </div>
+  </div>
+
+  <!-- Site content -->
+  <div id="site">
+
+    <header class="site-nav">
+      <div class="container">
+        <div class="brand">Victoria Dong</div>
+        <nav>
+          <a href="#about">About</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#loves">What She Loves</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="container">
+        <div class="eyebrow">Painter &middot; Dreamer &middot; Explorer</div>
+        <h1>Victoria Dong</h1>
+        <p class="tagline">Welcome to my little gallery — a place to share the paintings I make, the things I love, and a bit of my story as I grow.</p>
+        <div class="hero-scribble"></div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-text">
+            <div class="eyebrow" style="color:var(--sage); text-transform:uppercase; letter-spacing:.16em; font-size:.75rem; margin-bottom:10px;">About</div>
+            <h2 style="font-size:2rem; margin:0 0 20px;">Hi, I'm Victoria!</h2>
+            <h3>A young artist finding her colors</h3>
+            <p>I love painting with oils and acrylics, and sketching whatever catches my eye. I think I first fell in love with color because of all the little things I care about — matching an outfit just right, picking the prettiest fruit off the vine, or noticing how the light looks on a snowy mountain.</p>
+            <p>This page is where I get to share my art as it grows with me — from my very first pieces to whatever I'm working on now.</p>
+          </div>
+          <div class="photo-strip">
+            <div class="photo-card"><span>Age 6</span></div>
+            <div class="photo-card"><span>Age 9</span></div>
+            <div class="photo-card"><span>Today</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Gallery</div>
+          <h2>My Artwork</h2>
+          <p>A growing collection of paintings and sketches — updated as I finish new pieces.</p>
+        </div>
+        <div class="gallery-grid" id="gallery-grid"><!-- cards injected by script.js --></div>
+      </div>
+    </section>
+
+    <section id="loves">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Beyond the Canvas</div>
+          <h2>What Victoria Loves</h2>
+          <p>Art isn't the only thing that makes me who I am — here's a peek at the rest of my world.</p>
+        </div>
+        <div class="interest-grid">
+          <div class="interest-card">
+            <span class="icon">🧵</span>
+            <h3>Making &amp; Crafting</h3>
+            <p>Sewing tiny outfits for my dolls, crocheting little toys, designing bags, and doing my own nail art.</p>
+          </div>
+          <div class="interest-card">
+            <span class="icon">🏃‍♀️</span>
+            <h3>Running &amp; Cross Country</h3>
+            <p>I love the feeling of running with my team and pushing myself further with every race.</p>
+          </div>
+          <div class="interest-card">
+            <span class="icon">⛳</span>
+            <h3>Golf</h3>
+            <p>Three years of weekly practice and counting — it's become a steady, happy part of my routine.</p>
+          </div>
+          <div class="interest-card">
+            <span class="icon">🎿</span>
+            <h3>Skiing</h3>
+            <p>Winters mean flying down the mountain with my friends, chasing each other like little birds set free.</p>
+          </div>
+          <div class="interest-card">
+            <span class="icon">👗</span>
+            <h3>Fashion &amp; Style</h3>
+            <p>Putting outfits together just feels natural to me — it's another way I get to play with color and balance, same as painting.</p>
+          </div>
+          <div class="interest-card">
+            <span class="icon">🌱</span>
+            <h3>Growing Things</h3>
+            <p>We grow cucumbers, peaches, dragon fruit, and wax apples in our garden — and I insist on picking every single one myself.</p>
+          </div>
+          <div class="interest-card">
+            <span class="icon">🐱</span>
+            <h3>Cats (Not So Much Dogs)</h3>
+            <p>I'm a cat person through and through — dogs are a little more than I can handle!</p>
+          </div>
+          <div class="interest-card">
+            <span class="icon">🎤</span>
+            <h3>Public Speaking</h3>
+            <p>Thanks to all the speaking opportunities at school, standing up in front of a crowd feels natural to me now — I love sharing my ideas with confidence.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        &copy; <span id="year"></span> Victoria Dong. Made with love for family &amp; friends.
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
