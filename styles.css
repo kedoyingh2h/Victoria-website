@@ -5,9 +5,22 @@
   --ink-soft: #6b6459;
   --accent: #c98a7d;
   --accent-soft: #e8c9c0;
-  --sage: #8a9a7e;
-  --line: #e3dbcb;
+  --accent-deep: #a8654f;
+  --sage: #b8876f;
+  --line: #e8d9ce;
   --radius: 18px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 * {
@@ -20,7 +33,9 @@ html {
 
 body {
   margin: 0;
-  background: var(--cream);
+  background:
+    radial-gradient(ellipse 900px 500px at 50% 0%, var(--accent-soft) 0%, transparent 60%),
+    var(--cream);
   color: var(--ink);
   font-family: "Poppins", "Helvetica Neue", Arial, sans-serif;
   line-height: 1.6;
@@ -163,6 +178,14 @@ header.site-nav {
   margin: 0 0 18px;
 }
 
+.hero-logo {
+  max-width: 340px;
+  width: 70%;
+  height: auto;
+  margin: 0 auto 10px;
+  display: block;
+}
+
 .hero p.tagline {
   color: var(--ink-soft);
   max-width: 520px;
@@ -173,7 +196,7 @@ header.site-nav {
 .hero-scribble {
   width: 60px;
   height: 3px;
-  background: var(--accent-soft);
+  background: var(--accent-deep);
   border-radius: 3px;
   margin: 26px auto 0;
 }
