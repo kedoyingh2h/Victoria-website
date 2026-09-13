@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Victoria's Life &amp; Travels</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Password gate -->
+  <div id="gate">
+    <div class="gate-card">
+      <div class="brand">Victoria Dong</div>
+      <p>This little corner of the internet is just for family &amp; friends. Enter the password to come in.</p>
+      <input type="password" id="gate-input" placeholder="Password" autocomplete="off">
+      <button id="gate-submit">Enter</button>
+      <div class="gate-error" id="gate-error"></div>
+    </div>
+  </div>
+
+  <!-- Site content -->
+  <div id="site">
+
+    <header class="site-nav">
+      <div class="container">
+        <div class="brand"><a href="index.html" style="text-decoration:none; color:inherit;">Victoria Dong</a></div>
+        <nav>
+          <a href="index.html#about">About</a>
+          <a href="index.html#gallery">Gallery</a>
+          <a href="index.html#loves">What She Loves</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero" style="padding-top:60px; padding-bottom:40px;">
+      <div class="container">
+        <div class="eyebrow">Life &middot; Travel &middot; Everyday Moments</div>
+        <h1 style="font-size:clamp(2rem, 4vw, 3rem);">A Peek Into My Life</h1>
+        <p class="tagline">Beyond the canvas — snapshots from home, travels, and everyday adventures.</p>
+        <div class="hero-scribble"></div>
+      </div>
+    </section>
+
+    <section style="padding-top:0;">
+      <div class="container">
+        <div class="photo-wall">
+          <div class="photo-card"><img src="images/portrait-studio-2.jpg" alt="Victoria portrait"></div>
+          <div class="photo-card"><img src="images/cherry-blossom-1.jpg" alt="Victoria under cherry blossoms"></div>
+          <div class="photo-card"><img src="images/garden-flowers.jpg" alt="Victoria in the garden"></div>
+          <div class="photo-card"><img src="images/backyard-pool.jpg" alt="Victoria at home"></div>
+          <div class="photo-card"><img src="images/beach-tidepools.jpg" alt="Victoria exploring tide pools"></div>
+          <div class="photo-card"><img src="images/travel-shanghai-1.jpg" alt="Victoria traveling"></div>
+          <div class="photo-card"><img src="images/travel-lobby.jpg" alt="Victoria traveling"></div>
+        </div>
+        <p style="text-align:center; margin-top:40px;"><a href="index.html" class="life-link">&larr; Back to the gallery</a></p>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        &copy; <span id="year"></span> Victoria Dong. Made with love for family &amp; friends.
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

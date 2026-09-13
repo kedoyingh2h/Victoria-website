@@ -30,22 +30,61 @@ gateInput.addEventListener("keydown", (e) => {
   if (e.key === "Enter") tryUnlock();
 });
 
-// --- Placeholder gallery (swap in real artwork later) ---
-const mediums = ["Oil Painting", "Acrylic", "Sketch"];
+// --- Gallery: real artworks, plus placeholders for pieces not uploaded yet ---
+const artworks = [
+  {
+    img: "images/swan.jpg",
+    title: "November",
+    medium: "Digital Painting",
+    award: "High Merit Winner, Celebrating Art Contest · Published Artist of 2025 — featured in the Celebrating Art magazine",
+  },
+  { img: "images/rabbit.jpg", title: "Rabbit in the Grass", medium: "Digital Painting" },
+  { img: "images/protect-ocean.jpg", title: "Protect Our Ocean", medium: "Digital Painting" },
+  {
+    img: "images/goose.jpg",
+    title: "Guardian of the Lake",
+    medium: "Digital Painting",
+    award: "First Place · State Winner",
+  },
+  {
+    img: "images/salute.jpg",
+    title: "Little Salute, Big Respect",
+    medium: "Acrylic",
+    award: "First Place at both the Post and State levels, Illustrating America",
+  },
+];
+
+const PLACEHOLDER_SLOTS = 5; // extra "coming soon" cards while more art is added
+
 const galleryGrid = document.getElementById("gallery-grid");
 
-for (let i = 1; i <= 10; i++) {
-  const medium = mediums[(i - 1) % mediums.length];
-  const card = document.createElement("div");
-  card.className = "art-card";
-  card.innerHTML = `
-    <div class="art-thumb">Artwork photo coming soon</div>
-    <div class="art-info">
-      <span class="medium-tag">${medium}</span>
-      <h4>Untitled #${i}</h4>
-    </div>
-  `;
-  galleryGrid.appendChild(card);
+if (galleryGrid) {
+  artworks.forEach((art) => {
+    const card = document.createElement("div");
+    card.className = "art-card";
+    card.innerHTML = `
+      <div class="art-thumb"><img src="${art.img}" alt="${art.title}" loading="lazy"></div>
+      <div class="art-info">
+        <span class="medium-tag">${art.medium}</span>
+        <h4>${art.title}</h4>
+        ${art.award ? `<p class="award">🏆 ${art.award}</p>` : ""}
+      </div>
+    `;
+    galleryGrid.appendChild(card);
+  });
+
+  for (let i = 1; i <= PLACEHOLDER_SLOTS; i++) {
+    const card = document.createElement("div");
+    card.className = "art-card";
+    card.innerHTML = `
+      <div class="art-thumb">More artwork coming soon</div>
+      <div class="art-info">
+        <h4>&nbsp;</h4>
+      </div>
+    `;
+    galleryGrid.appendChild(card);
+  }
 }
 
-document.getElementById("year").textContent = new Date().getFullYear();
+const yearEl = document.getElementById("year");
+if (yearEl) yearEl.textContent = new Date().getFullYear();
