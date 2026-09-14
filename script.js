@@ -49,7 +49,7 @@ if (galleryGrid) {
     const card = document.createElement("div");
     card.className = "art-card";
     card.innerHTML = `
-      <div class="art-thumb"><img src="${art.img}" alt="${art.title}" loading="lazy"></div>
+      <div class="art-thumb"><img src="${art.img}" alt="${art.title}" loading="lazy" data-full="${art.img}" data-title="${art.title}"></div>
       <div class="art-info">
         <span class="medium-tag">${art.medium}</span>
         <h4>${art.title}</h4>
@@ -71,6 +71,49 @@ if (galleryGrid) {
     `;
     galleryGrid.appendChild(card);
   }
+}
+
+// --- Lightbox: click any artwork thumbnail to view it full-size ---
+if (galleryGrid) {
+  const lightbox = document.createElement("div");
+  lightbox.className = "lightbox";
+  lightbox.innerHTML = `
+    <button class="lightbox-close" aria-label="Close">&times;</button>
+    <img class="lightbox-img" src="" alt="">
+    <p class="lightbox-caption"></p>
+  `;
+  document.body.appendChild(lightbox);
+
+  const lightboxImg = lightbox.querySelector(".lightbox-img");
+  const lightboxCaption = lightbox.querySelector(".lightbox-caption");
+
+  function openLightbox(src, title) {
+    lightboxImg.src = src;
+    lightboxImg.alt = title;
+    lightboxCaption.textContent = title;
+    lightbox.classList.add("open");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove("open");
+    document.body.style.overflow = "";
+  }
+
+  galleryGrid.addEventListener("click", (e) => {
+    const img = e.target.closest(".art-thumb img");
+    if (img) openLightbox(img.dataset.full, img.dataset.title);
+  });
+
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox || e.target.classList.contains("lightbox-close")) {
+      closeLightbox();
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeLightbox();
+  });
 }
 
 const yearEl = document.getElementById("year");
