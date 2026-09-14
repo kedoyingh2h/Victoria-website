@@ -55,77 +55,6 @@ a { color: inherit; }
   padding: 0 28px;
 }
 
-/* ---------- Password gate ---------- */
-#gate {
-  position: fixed;
-  inset: 0;
-  background: var(--cream);
-  z-index: 999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-}
-
-#gate[hidden] { display: none; }
-
-.gate-card {
-  background: #fff;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 44px 36px;
-  max-width: 380px;
-  width: 100%;
-  text-align: center;
-  box-shadow: 0 12px 40px rgba(60, 50, 30, 0.08);
-}
-
-.gate-card .brand {
-  font-size: 1.6rem;
-  margin-bottom: 6px;
-}
-
-.gate-card p {
-  color: var(--ink-soft);
-  font-size: 0.95rem;
-  margin-bottom: 22px;
-}
-
-.gate-card input {
-  width: 100%;
-  padding: 12px 14px;
-  border-radius: 10px;
-  border: 1px solid var(--line);
-  font-size: 1rem;
-  margin-bottom: 12px;
-  font-family: inherit;
-  text-align: center;
-}
-
-.gate-card button {
-  width: 100%;
-  padding: 12px 14px;
-  border-radius: 10px;
-  border: none;
-  background: var(--ink);
-  color: var(--cream);
-  font-size: 1rem;
-  cursor: pointer;
-  font-family: inherit;
-}
-
-.gate-card button:hover { background: #48423a; }
-
-.gate-error {
-  color: var(--accent);
-  font-size: 0.85rem;
-  min-height: 1.2em;
-  margin-top: 10px;
-}
-
-#site { display: none; }
-#site.revealed { display: block; }
-
 /* ---------- Nav ---------- */
 header.site-nav {
   position: sticky;
@@ -401,6 +330,14 @@ section {
   margin: 8px 0 0;
   font-size: 0.82rem;
   color: var(--ink-soft);
+  line-height: 1.5;
+}
+
+.art-info .note {
+  margin: 8px 0 0;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  font-style: italic;
   line-height: 1.5;
 }
 

@@ -1,35 +1,3 @@
-// --- Simple password gate (casual privacy, not high security) ---
-const SITE_PASSWORD = "victoria2026"; // TODO: change this to whatever password you'd like
-
-const gate = document.getElementById("gate");
-const site = document.getElementById("site");
-const gateInput = document.getElementById("gate-input");
-const gateSubmit = document.getElementById("gate-submit");
-const gateError = document.getElementById("gate-error");
-
-function unlockSite() {
-  gate.hidden = true;
-  site.classList.add("revealed");
-}
-
-if (localStorage.getItem("victoria-site-unlocked") === "yes") {
-  unlockSite();
-}
-
-function tryUnlock() {
-  if (gateInput.value === SITE_PASSWORD) {
-    localStorage.setItem("victoria-site-unlocked", "yes");
-    unlockSite();
-  } else {
-    gateError.textContent = "That's not quite right — try again.";
-  }
-}
-
-gateSubmit.addEventListener("click", tryUnlock);
-gateInput.addEventListener("keydown", (e) => {
-  if (e.key === "Enter") tryUnlock();
-});
-
 // --- Gallery: real artworks, plus placeholders for pieces not uploaded yet ---
 const artworks = [
   {
@@ -52,9 +20,27 @@ const artworks = [
     medium: "Acrylic",
     award: "First Place at both the Post and State levels, Illustrating America",
   },
+  {
+    img: "images/crystal-ball-sanctuary.jpg",
+    title: "A Sanctuary in a Crystal Ball",
+    medium: "Acrylic",
+    award: "Honorary title “Young Ambassador of Art Exchange,” The 6th UWEE International Art Exhibition at Luv (Theme: One World · One Future) · Certificate No. CN-0010-054-192 · 2024",
+  },
+  {
+    img: "images/starry-night-study.jpg",
+    title: "Starry Night Study",
+    medium: "Oil",
+    note: "Painted at age 8 (2023), inspired by Van Gogh's The Starry Night",
+  },
+  {
+    img: "images/self-portrait.jpg",
+    title: "Me at Eleven",
+    medium: "Acrylic",
+    note: "Her first self-portrait",
+  },
 ];
 
-const PLACEHOLDER_SLOTS = 5; // extra "coming soon" cards while more art is added
+const PLACEHOLDER_SLOTS = 2; // extra "coming soon" cards while more art is added
 
 const galleryGrid = document.getElementById("gallery-grid");
 
@@ -68,6 +54,7 @@ if (galleryGrid) {
         <span class="medium-tag">${art.medium}</span>
         <h4>${art.title}</h4>
         ${art.award ? `<p class="award">🏆 ${art.award}</p>` : ""}
+        ${art.note ? `<p class="note">${art.note}</p>` : ""}
       </div>
     `;
     galleryGrid.appendChild(card);
