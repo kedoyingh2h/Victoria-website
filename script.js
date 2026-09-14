@@ -40,7 +40,7 @@ const artworks = [
   },
 ];
 
-const PLACEHOLDER_SLOTS = 2; // extra "coming soon" cards while more art is added
+const PLACEHOLDER_SLOTS = 0; // extra "coming soon" cards while more art is added
 
 const galleryGrid = document.getElementById("gallery-grid");
 
