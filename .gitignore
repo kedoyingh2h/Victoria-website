@@ -1,1 +1,6 @@
 .DS_Store
+
+# stray pasted images that land in the project root instead of images/
+/*.jpg
+/*.jpeg
+/*.png
