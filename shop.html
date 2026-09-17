@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Victoria Dong &mdash; Shop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="shop.css">
+</head>
+<body>
+
+  <div id="site">
+
+    <header class="site-nav">
+      <div class="container">
+        <div class="brand"><a href="index.html" style="text-decoration:none; color:inherit;">Victoria Dong</a></div>
+        <nav>
+          <a href="index.html#about">About</a>
+          <a href="index.html#gallery">Gallery</a>
+          <a href="index.html#loves">What She Loves</a>
+          <a href="shop.html">Shop</a>
+          <a href="index.html#contact">Contact</a>
+          <button id="cart-toggle" class="cart-toggle">&#128717; Cart <span id="cart-count" class="cart-count">0</span></button>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero" style="padding-top:60px; padding-bottom:40px;">
+      <div class="container">
+        <div class="eyebrow">Art You Can Take Home</div>
+        <h1 style="font-size:clamp(2rem, 4vw, 3rem);">The Shop</h1>
+        <p class="tagline">A few things designed by Victoria, made with her artwork. Every order is packed with love (and probably a doodle).</p>
+        <div class="hero-scribble"></div>
+      </div>
+    </section>
+
+    <section style="padding-top:0;">
+      <div class="container">
+        <div class="shop-grid" id="shop-grid"><!-- product cards injected by shop.js --></div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        &copy; <span id="year"></span> Victoria Dong. Made with love for family &amp; friends.
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Cart / Checkout panel -->
+  <div id="cart-overlay" class="cart-overlay"></div>
+  <aside id="cart-panel" class="cart-panel">
+    <div class="cart-panel-head">
+      <h3 id="cart-panel-title">Your Cart</h3>
+      <button id="cart-close" class="cart-close" aria-label="Close">&times;</button>
+    </div>
+
+    <div id="cart-view">
+      <div id="cart-items"></div>
+      <div id="cart-empty" class="cart-empty" hidden>Your cart is empty.</div>
+      <div class="cart-summary">
+        <div class="cart-total-row"><span>Total</span><span id="cart-total">$0</span></div>
+        <button id="checkout-btn" class="contact-btn cart-full-btn">Proceed to Checkout</button>
+      </div>
+    </div>
+
+    <div id="checkout-view" hidden>
+      <p class="checkout-instructions">
+        <strong>Step 1 &mdash; Send payment via Zelle</strong><br>
+        Send <span id="checkout-total">$0</span> to <strong>kedoying@gmail.com</strong> using your bank's Zelle transfer.
+      </p>
+      <p class="checkout-instructions">
+        <strong>Step 2 &mdash; Tell us where to ship it</strong><br>
+        Fill in your details and the Zelle confirmation number below, then tap "Place Order." This opens an email with your order for us to confirm and ship.
+      </p>
+      <form id="checkout-form">
+        <input type="text" name="name" placeholder="Full name" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="tel" name="phone" placeholder="Phone">
+        <input type="text" name="address" placeholder="Street address" required>
+        <div class="checkout-row">
+          <input type="text" name="city" placeholder="City" required>
+          <input type="text" name="state" placeholder="State">
+          <input type="text" name="zip" placeholder="ZIP" required>
+        </div>
+        <input type="text" name="zelle" placeholder="Zelle confirmation number" required>
+        <button type="submit" class="contact-btn cart-full-btn">Place Order</button>
+        <button type="button" id="back-to-cart" class="checkout-back">&larr; Back to cart</button>
+      </form>
+    </div>
+  </aside>
+
+  <script src="script.js"></script>
+  <script src="shop.js"></script>
+</body>
+</html>
