@@ -27,10 +27,10 @@ const artworks = [
     award: "Honorary title “Young Ambassador of Art Exchange,” The 6th UWEE International Art Exhibition at Luv (Theme: One World · One Future) · Certificate No. CN-0010-054-192 · 2024",
   },
   {
-    img: "images/starry-night-study.jpg",
-    title: "Starry Night Study",
-    medium: "Oil",
-    note: "Painted at age 8 (2023), inspired by Van Gogh's The Starry Night",
+    img: "images/hand-sketch.jpg",
+    title: "My Own Hand",
+    medium: "Charcoal",
+    note: "Drawn at age 10, a study of her own hand",
   },
   {
     img: "images/self-portrait.jpg",

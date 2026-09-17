@@ -11,6 +11,12 @@ const moreArtworks = [
     title: "Victoria",
     medium: "Charcoal",
   },
+  {
+    img: "images/starry-night-study.jpg",
+    title: "Starry Night Study",
+    medium: "Oil",
+    note: "Painted at age 8 (2023), inspired by Van Gogh's The Starry Night",
+  },
 ];
 
 const moreGrid = document.getElementById("more-gallery-grid");
