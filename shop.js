@@ -57,8 +57,44 @@ if (shopGrid) {
     if (e.target.classList.contains("add-to-cart-btn")) {
       addToCart(e.target.dataset.id);
     }
+    if (e.target.classList.contains("product-main-img")) {
+      openProductLightbox(e.target.src, e.target.alt);
+    }
   });
 }
+
+// --- Lightbox: click a product photo to view it full-size ---
+const productLightbox = document.createElement("div");
+productLightbox.className = "lightbox";
+productLightbox.innerHTML = `
+  <button class="lightbox-close" aria-label="Close">&times;</button>
+  <img class="lightbox-img" src="" alt="">
+  <p class="lightbox-caption"></p>
+`;
+document.body.appendChild(productLightbox);
+
+function openProductLightbox(src, title) {
+  productLightbox.querySelector(".lightbox-img").src = src;
+  productLightbox.querySelector(".lightbox-img").alt = title;
+  productLightbox.querySelector(".lightbox-caption").textContent = title;
+  productLightbox.classList.add("open");
+  document.body.style.overflow = "hidden";
+}
+
+function closeProductLightbox() {
+  productLightbox.classList.remove("open");
+  document.body.style.overflow = "";
+}
+
+productLightbox.addEventListener("click", (e) => {
+  if (e.target === productLightbox || e.target.classList.contains("lightbox-close")) {
+    closeProductLightbox();
+  }
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") closeProductLightbox();
+});
 
 // --- Cart (stored in localStorage) ---
 function getCart() {

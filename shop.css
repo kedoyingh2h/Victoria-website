@@ -46,6 +46,12 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  cursor: zoom-in;
+  transition: transform 0.3s ease;
+}
+
+.product-main-img:hover {
+  transform: scale(1.03);
 }
 
 .product-thumbs {
