@@ -14,6 +14,13 @@ const products = [
     images: ["images/pillow-lineup.jpg", "images/pillow-back.jpg", "images/pillow-front.jpg"],
     description: "A soft linen throw pillow printed with Victoria's “Rabbit in the Grass,” with an embroidered fern pattern on the reverse side.",
   },
+  {
+    id: "betta-jewelry-set",
+    name: "The Betta & Lavender Gift Set",
+    price: 98,
+    images: ["images/jewelry-giftbox.jpg", "images/jewelry-flatlay.jpg", "images/jewelry-detail.jpg", "images/betta-fish-drawing.jpg"],
+    description: "Inspired by the colored-pencil betta fish Victoria drew at age 6. This gift set includes a rose gold necklace, matching earrings, a small teacup, and a miniature framed print of the original drawing — all presented in a keepsake box.",
+  },
 ];
 
 const shopGrid = document.getElementById("shop-grid");
