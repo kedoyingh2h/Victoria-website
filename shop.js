@@ -21,6 +21,13 @@ const products = [
     images: ["images/jewelry-giftbox.jpg", "images/jewelry-flatlay.jpg", "images/jewelry-detail.jpg", "images/betta-fish-drawing.jpg"],
     description: "Inspired by the colored-pencil betta fish Victoria drew at age 6. This gift set includes a rose gold necklace, matching earrings, a small teacup, and a miniature framed print of the original drawing — all presented in a keepsake box.",
   },
+  {
+    id: "hand-clutch",
+    name: "Sculpted Hand Clutch",
+    price: 228,
+    images: ["images/clutch-front.jpg", "images/clutch-side.jpg", "images/hand-sketch.jpg"],
+    description: "Genuine cowhide leather, hand-sculpted into the shape of Victoria's charcoal study “My Own Hand.” About 28cm × 20cm × 8cm — roomy enough for an iPad or A5 documents.",
+  },
 ];
 
 const shopGrid = document.getElementById("shop-grid");
