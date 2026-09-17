@@ -7,6 +7,13 @@ const products = [
     images: ["images/apron-hanging.jpg", "images/apron-folded.jpg", "images/apron-detail.jpg"],
     description: "The same apron Victoria wears while she paints — heavyweight canvas with genuine leather straps, featuring her piece “Rabbit in the Grass.”",
   },
+  {
+    id: "pillow-rabbit",
+    name: "Throw Pillow — Rabbit in the Grass",
+    price: 35,
+    images: ["images/pillow-lineup.jpg", "images/pillow-back.jpg", "images/pillow-front.jpg"],
+    description: "A soft linen throw pillow printed with Victoria's “Rabbit in the Grass,” with an embroidered fern pattern on the reverse side.",
+  },
 ];
 
 const shopGrid = document.getElementById("shop-grid");
