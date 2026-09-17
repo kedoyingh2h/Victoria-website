@@ -55,10 +55,6 @@
   border-radius: 20px;
 }
 
-.out-of-stock .product-main-img {
-  filter: grayscale(70%);
-  opacity: 0.75;
-}
 
 .add-to-cart-btn:disabled {
   background: var(--line);
