@@ -6,6 +6,7 @@ const products = [
     price: 45,
     images: ["images/apron-hanging.jpg", "images/apron-folded.jpg", "images/apron-detail.jpg"],
     description: "The same apron Victoria wears while she paints — heavyweight canvas with genuine leather straps, featuring her piece “Rabbit in the Grass.”",
+    inStock: false,
   },
   {
     id: "pillow-rabbit",
@@ -20,6 +21,7 @@ const products = [
     price: 98,
     images: ["images/jewelry-giftbox.jpg", "images/jewelry-flatlay.jpg", "images/jewelry-detail.jpg", "images/betta-fish-drawing.jpg"],
     description: "Inspired by the colored-pencil betta fish Victoria drew at age 6. This gift set includes a rose gold necklace, matching earrings, a small teacup, and a miniature framed print of the original drawing — all presented in a keepsake box.",
+    inStock: false,
   },
   {
     id: "hand-clutch",
@@ -36,9 +38,12 @@ if (shopGrid) {
   products.forEach((p) => {
     const card = document.createElement("div");
     card.className = "product-card";
+    const outOfStock = p.inStock === false;
+    if (outOfStock) card.classList.add("out-of-stock");
     card.innerHTML = `
       <div class="product-thumb">
         <img src="${p.images[0]}" alt="${p.name}" class="product-main-img" data-images='${JSON.stringify(p.images)}' data-idx="0">
+        ${outOfStock ? `<span class="stock-badge">Out of Stock</span>` : ""}
       </div>
       <div class="product-thumbs">
         ${p.images.map((img, i) => `<img src="${img}" class="product-thumb-dot ${i === 0 ? "active" : ""}" data-src="${img}">`).join("")}
@@ -47,7 +52,11 @@ if (shopGrid) {
         <h3>${p.name}</h3>
         <p class="product-price">$${p.price}</p>
         <p class="product-desc">${p.description}</p>
-        <button class="contact-btn add-to-cart-btn" data-id="${p.id}">Add to Cart</button>
+        ${
+          outOfStock
+            ? `<button class="contact-btn add-to-cart-btn" disabled>Out of Stock</button>`
+            : `<button class="contact-btn add-to-cart-btn" data-id="${p.id}">Add to Cart</button>`
+        }
       </div>
     `;
     shopGrid.appendChild(card);

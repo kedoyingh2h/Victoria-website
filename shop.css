@@ -36,9 +36,35 @@
 }
 
 .product-thumb {
+  position: relative;
   aspect-ratio: 4/3;
   overflow: hidden;
   border-bottom: 1px solid var(--line);
+}
+
+.stock-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: rgba(20, 16, 12, 0.82);
+  color: #fff;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 5px 12px;
+  border-radius: 20px;
+}
+
+.out-of-stock .product-main-img {
+  filter: grayscale(70%);
+  opacity: 0.75;
+}
+
+.add-to-cart-btn:disabled {
+  background: var(--line);
+  color: var(--ink-soft);
+  cursor: not-allowed;
+  box-shadow: none;
 }
 
 .product-main-img {
